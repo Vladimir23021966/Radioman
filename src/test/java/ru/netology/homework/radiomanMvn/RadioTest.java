@@ -1,4 +1,5 @@
 package ru.netology.homework.radiomanMvn;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -72,38 +73,37 @@ public class RadioTest {
     @Test
     public void shouldIncreaseVolume() {
         Radio volume = new Radio();
-        volume.currentVolume = 5;
-        volume.increaseVolume();
+        volume.setIncreaseVolume(5);
         int expected = 6;
-        int actual = volume.getCurrentVolume();
+        int actual = volume.getIncreaseCurrentVolume();
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     public void shouldIncreaseVolumeMoreMaxBoard() {
         Radio volume = new Radio();
-        volume.currentVolume = 11;
-        volume.increaseVolume();
+        volume.setIncreaseVolume(11);
         int expected = 10;
         int actual = volume.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     public void shouldDecreaseVolume() {
         Radio volume = new Radio();
-        volume.currentVolume = 5;
-        volume.decreaseVolume();
+        volume.setDecreaseVolume(5);
         int expected = 4;
-        int actual = volume.getCurrentVolume();
+        int actual = volume.getDecreaseCurrentVolume();
         Assertions.assertEquals(expected, actual);
 
     }
+
     @Test
     public void shouldDecreaseVolumeLessMinBoard() {
         Radio volume = new Radio();
-        volume.currentVolume = -1;
-        volume.decreaseVolume();
+        volume.setDecreaseVolume(-1);
         int expected = 0;
         int actual = volume.getCurrentVolume();
         Assertions.assertEquals(expected, actual);
@@ -177,40 +177,36 @@ public class RadioTest {
     @Test
     public void shouldNextRadioStation() {
         Radio station = new Radio();
-        station.currentRadioStation = 5;
-        station.nextRadioStation();
+        station.setNextCurrentRadioStation(5);
         int expected = 6;
-        int actual = station.getCurrentRadioStation();
+        int actual = station.getNextCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldNextMaxBorderRadioStation() {
         Radio station = new Radio();
-        station.currentRadioStation = 9;
-        station.nextRadioStation();
+        station.setNextCurrentRadioStation(9);
         int expected = 0;
-        int actual = station.getCurrentRadioStation();
+        int actual = station.getNextCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldPrevRadioStation() {
         Radio station = new Radio();
-        station.currentRadioStation = 6;
-        station.prevRadioStation();
+        station.setPrevCurrentRadioStation(6);
         int expected = 5;
-        int actual = station.getCurrentRadioStation();
+        int actual = station.getPrevCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldPrevMinBorderRadioStation() {
         Radio station = new Radio();
-        station.currentRadioStation = 0;
-        station.prevRadioStation();
+        station.setPrevCurrentRadioStation(0);
         int expected = 9;
-        int actual = station.getCurrentRadioStation();
+        int actual = station.getPrevCurrentRadioStation();
         Assertions.assertEquals(expected, actual);
     }
 }

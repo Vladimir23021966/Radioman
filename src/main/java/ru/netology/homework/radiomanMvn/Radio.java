@@ -1,23 +1,41 @@
- package ru.netology.homework.radiomanMvn;
+package ru.netology.homework.radiomanMvn;
 
 public class Radio {
-    public int currentVolume;
-    public int currentRadioStation;
+    private int currentVolume;
+    private int currentRadioStation;
 
     // код - уровень звука.
 
 
-    public void increaseVolume() {
-        if (currentVolume < 10) {
-            currentVolume = currentVolume + 1;
-        } else {currentVolume=10;}
+    public void setIncreaseVolume(int newCurrentVolume) {
+
+        if (newCurrentVolume < 10) {
+            newCurrentVolume++;
+        }
+        if (newCurrentVolume >=10) {
+            newCurrentVolume = 10;
+        }
+        currentVolume = newCurrentVolume;
     }
 
-    public void decreaseVolume() {
-        if (currentVolume > 0) {
-            currentVolume = currentVolume - 1;
-        }  else {currentVolume=0;}
+    public int getIncreaseCurrentVolume() {
+        return currentVolume;
     }
+
+    public void setDecreaseVolume(int newCurrentVolume) {
+        if (newCurrentVolume > 0) {
+            newCurrentVolume --;
+        }
+        if (newCurrentVolume <= 0) {
+            newCurrentVolume = 0;
+        }
+        currentVolume = newCurrentVolume;
+    }
+
+    public int getDecreaseCurrentVolume() {
+        return currentVolume;
+    }
+
 
     public void setCurrentVolume(int newCurrentVolume) {
 
@@ -35,25 +53,32 @@ public class Radio {
     }
 
     // код - номер станции .
-
-
-    public void nextRadioStation() {
-        if (currentRadioStation < 9) {
-            currentRadioStation = currentRadioStation + 1;
+    public void setNextCurrentRadioStation(int newCurrentRadioStation) {
+        if (newCurrentRadioStation < 9) {
+            newCurrentRadioStation++;
         }
-        if (currentRadioStation == 9) {
-            currentRadioStation = 0;
+        if (newCurrentRadioStation == 9) {
+            newCurrentRadioStation = 0;
         }
+        currentRadioStation = newCurrentRadioStation;
     }
 
+    public int getNextCurrentRadioStation() {
+        return currentRadioStation;
+    }
 
-    public void prevRadioStation() {
-        if (currentRadioStation > 0) {
-            currentRadioStation = currentRadioStation - 1;
+    public void setPrevCurrentRadioStation(int newCurrentRadioStation) {
+        if (newCurrentRadioStation > 0) {
+            newCurrentRadioStation--;
         }
-        if (currentRadioStation == 0) {
-            currentRadioStation = 9;
+        if (newCurrentRadioStation == 0) {
+            newCurrentRadioStation = 9;
         }
+        currentRadioStation = newCurrentRadioStation;
+    }
+
+    public int getPrevCurrentRadioStation() {
+        return currentRadioStation;
     }
 
     public void setCurrentRadioStation(int newCurrentRadioStation) {
@@ -71,4 +96,7 @@ public class Radio {
         return currentRadioStation;
     }
 
+
 }
+
+
