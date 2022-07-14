@@ -1,102 +1,94 @@
 package ru.netology.homework.radiomanMvn;
 
 public class Radio {
-    private int currentVolume;
-    private int currentRadioStation;
+    protected int currentVolume;
+    protected int currentRadioStation;
 
     // код - уровень звука.
 
 
-    public void setIncreaseVolume(int newCurrentVolume) {
+    public int setIncreaseVolume() {
 
-        if (newCurrentVolume < 10) {
-            newCurrentVolume++;
+        if (currentVolume < 10) {
+            currentVolume++;
         }
-        if (newCurrentVolume >=10) {
-            newCurrentVolume = 10;
+        if (currentVolume >= 10) {
+            currentVolume = 10;
         }
-        currentVolume = newCurrentVolume;
-    }
-
-    public int getIncreaseCurrentVolume() {
-        return currentVolume;
-    }
-
-    public void setDecreaseVolume(int newCurrentVolume) {
-        if (newCurrentVolume > 0) {
-            newCurrentVolume --;
-        }
-        if (newCurrentVolume <= 0) {
-            newCurrentVolume = 0;
-        }
-        currentVolume = newCurrentVolume;
-    }
-
-    public int getDecreaseCurrentVolume() {
-        return currentVolume;
+        return this.currentVolume;
     }
 
 
-    public void setCurrentVolume(int newCurrentVolume) {
+    public int setDecreaseVolume() {
+        if (currentVolume > 0) {
+            currentVolume--;
+        }
+        if (currentVolume <= 0) {
+            currentVolume = 0;
+        }
+        return this.currentVolume;
+    }
 
-        if (newCurrentVolume < 0) {
-            newCurrentVolume = 0;
+
+    public void setCurrentVolume(int currentVolume) {
+
+        if (currentVolume < 0) {
+            currentVolume = 0;
         }
-        if (newCurrentVolume > 10) {
-            newCurrentVolume = 10;
+        if (currentVolume > 10) {
+            currentVolume = 10;
         }
-        currentVolume = newCurrentVolume;
+        this.currentVolume = currentVolume;
     }
 
     public int getCurrentVolume() {
+
         return currentVolume;
     }
 
     // код - номер станции .
-    public void setNextCurrentRadioStation(int newCurrentRadioStation) {
-        if (newCurrentRadioStation < 9) {
-            newCurrentRadioStation++;
+
+
+    public int setNextCurrentRadioStation() {
+        if (currentRadioStation < 9) {
+            currentRadioStation++;
         }
-        if (newCurrentRadioStation == 9) {
-            newCurrentRadioStation = 0;
+        if (currentRadioStation == 9) {
+            currentRadioStation = 0;
         }
-        currentRadioStation = newCurrentRadioStation;
+        return this.currentRadioStation;
     }
 
-    public int getNextCurrentRadioStation() {
-        return currentRadioStation;
+
+    public int setPrevCurrentRadioStation() {
+        if (currentRadioStation > 0) {
+            currentRadioStation--;
+        }
+        if (currentRadioStation == 0) {
+            currentRadioStation = 9;
+        }
+        return this.currentRadioStation;
     }
 
-    public void setPrevCurrentRadioStation(int newCurrentRadioStation) {
-        if (newCurrentRadioStation > 0) {
-            newCurrentRadioStation--;
-        }
-        if (newCurrentRadioStation == 0) {
-            newCurrentRadioStation = 9;
-        }
-        currentRadioStation = newCurrentRadioStation;
-    }
 
-    public int getPrevCurrentRadioStation() {
-        return currentRadioStation;
-    }
+    public void setCurrentRadioStation(int currentRadioStation) {
 
-    public void setCurrentRadioStation(int newCurrentRadioStation) {
-
-        if (newCurrentRadioStation < 0) {
-            newCurrentRadioStation = 0;
+        if (currentRadioStation < 0) {
+            currentRadioStation = 0;
         }
-        if (newCurrentRadioStation > 9) {
-            newCurrentRadioStation = 9;
+        if (currentRadioStation > 9) {
+            currentRadioStation = 9;
         }
-        currentRadioStation = newCurrentRadioStation;
+        this.currentRadioStation = currentRadioStation;
     }
 
     public int getCurrentRadioStation() {
+
         return currentRadioStation;
     }
 
 
 }
+
 
 
