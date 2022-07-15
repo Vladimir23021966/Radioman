@@ -7,7 +7,7 @@ public class Radio {
     // код - уровень звука.
 
 
-    public int setIncreaseVolume() {
+    public void setIncreaseVolume() {
 
         if (currentVolume < 10) {
             currentVolume++;
@@ -15,18 +15,16 @@ public class Radio {
         if (currentVolume >= 10) {
             currentVolume = 10;
         }
-        return this.currentVolume;
     }
 
 
-    public int setDecreaseVolume() {
+    public void setDecreaseVolume() {
         if (currentVolume > 0) {
             currentVolume--;
         }
         if (currentVolume <= 0) {
             currentVolume = 0;
         }
-        return this.currentVolume;
     }
 
 
@@ -49,25 +47,23 @@ public class Radio {
     // код - номер станции .
 
 
-    public int setNextCurrentRadioStation() {
+    public void setNextCurrentRadioStation() {
         if (currentRadioStation < 9) {
             currentRadioStation++;
         }
         if (currentRadioStation == 9) {
             currentRadioStation = 0;
         }
-        return this.currentRadioStation;
     }
 
 
-    public int setPrevCurrentRadioStation() {
+    public void setPrevCurrentRadioStation() {
         if (currentRadioStation > 0) {
             currentRadioStation--;
         }
         if (currentRadioStation == 0) {
             currentRadioStation = 9;
         }
-        return this.currentRadioStation;
     }
 
 
