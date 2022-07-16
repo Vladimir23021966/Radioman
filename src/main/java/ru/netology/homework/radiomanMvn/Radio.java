@@ -50,8 +50,7 @@ public class Radio {
     public void setNextCurrentRadioStation() {
         if (currentRadioStation < 9) {
             currentRadioStation++;
-        }
-        if (currentRadioStation == 9) {
+        } else {
             currentRadioStation = 0;
         }
     }
@@ -60,10 +59,10 @@ public class Radio {
     public void setPrevCurrentRadioStation() {
         if (currentRadioStation > 0) {
             currentRadioStation--;
-        }
-        if (currentRadioStation == 0) {
+        } else {
             currentRadioStation = 9;
         }
+
     }
 
 
