@@ -3,17 +3,25 @@ package ru.netology.homework.radiomanMvn;
 public class Radio {
     protected int currentVolume;
     protected int currentRadioStation;
+    protected int stationCount=10;
 
+    public Radio() {
+
+    }
+
+    public Radio(int stationCount){
+        this.stationCount=stationCount;
+    }
     // код - уровень звука.
 
 
     public void setIncreaseVolume() {
 
-        if (currentVolume < 10) {
+        if (currentVolume < 100) {
             currentVolume++;
         }
-        if (currentVolume >= 10) {
-            currentVolume = 10;
+        if (currentVolume >= 100) {
+            currentVolume = 100;
         }
     }
 
@@ -33,8 +41,8 @@ public class Radio {
         if (currentVolume < 0) {
             currentVolume = 0;
         }
-        if (currentVolume > 10) {
-            currentVolume = 10;
+        if (currentVolume > 100) {
+            currentVolume = 100;
         }
         this.currentVolume = currentVolume;
     }
@@ -48,7 +56,7 @@ public class Radio {
 
 
     public void setNextCurrentRadioStation() {
-        if (currentRadioStation < 9) {
+        if (currentRadioStation < stationCount-1) {
             currentRadioStation++;
         } else {
             currentRadioStation = 0;
@@ -60,7 +68,7 @@ public class Radio {
         if (currentRadioStation > 0) {
             currentRadioStation--;
         } else {
-            currentRadioStation = 9;
+            currentRadioStation = stationCount-1;
         }
 
     }
@@ -71,8 +79,8 @@ public class Radio {
         if (currentRadioStation < 0) {
             currentRadioStation = 0;
         }
-        if (currentRadioStation > 9) {
-            currentRadioStation = 9;
+        if (currentRadioStation > stationCount-1) {
+            currentRadioStation = stationCount-1;
         }
         this.currentRadioStation = currentRadioStation;
     }
